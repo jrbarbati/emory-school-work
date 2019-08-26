@@ -1,0 +1,7 @@
+grant codeBase "file:lib/qtest.jar" {
+    permission java.security.AllPermission;
+};
+
+grant codeBase "file:lib/rsyntaxtextarea-2.5.8.jar" {
+    permission java.security.AllPermission;
+};

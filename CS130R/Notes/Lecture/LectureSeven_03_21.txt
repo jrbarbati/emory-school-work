@@ -1,0 +1,37 @@
+Data Structures
+
+Arrays (Matrices, vectors)
+	Can be any type but can only contain one datatype
+
+Cell Arrays
+	Can contain many different types of data structures (data structure that holds data structures)
+		Matrices, vectors, doubles, ints, chars/strings
+		Could have a cell array of matrices mixed with vectors mixed with strings
+		Use curly brackets ( { } ) instead of parentheses
+			cellmat = {4 'the' 1:3}
+			cellmat{2} --> the
+			cellmat{3}(2) --> goes to third element of cell array and then goes to 2 element in that vector --> 2
+		Referencing multiple elements of cell arrays
+			cellmat{1:2}
+				ans = 4
+				ans = 'the'
+			[cell1, cell2] = cellmat{1:2}
+				cell1 = 4
+				cell2 = 'the'
+			cellmat(1:2) --> returns new cell array with the specified elements
+				ans = 
+					[4] 'the'
+	Memory
+		cellArray = cell(2, 2)
+		cellArray{1,1} = [1 2; 3 4]
+		When cellArray is initialized, it gives you however much memory you need
+		Once the first element is initialized, it goes somewhere else in memory and, in memory, the cellArray var itself holds the address to its element
+			Think what happens when you print a Java array without the Arrays class.
+
+Structures
+	Groups of related items
+	Can also contain different types
+	structVar = struct('Line', 2, 'x', 3, 'y', 4)
+	structVar.Line --> 2
+	structVar.y --> 4
+

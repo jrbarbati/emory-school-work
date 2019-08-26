@@ -1,0 +1,18 @@
+Sample Program
+Takes in a char, makes it uppercase if lowercase, and vice-versa
+	Check input 
+		for uppercase --> convert to lowercase
+		for lowercase --> convert to uppercase
+		'A' --> 'a' char('A' + 32);
+		'a' --> 'A' char('a' - 32);
+	return converted char	
+
+If statements
+	Check a condition, and perfom some code if that condition is true
+	if condition
+		action
+	end
+	Try not to initialize and declare vars in if statements
+
+Switch statements
+	

@@ -1,0 +1,31 @@
+Variable Types
+double	default type
+	float or real
+single 	float or real
+	doesn't hold as large a number as double
+int8, int16, int32, int64
+	to find the range of numbers it can hold, just to 2^n where n is the number of bits
+	the int can hold.
+uint8, uint16, etc
+	low is always 0
+	high is always 2^n - 1
+	uint8 holds numbers 0 - 255
+
+Numerical Operators
+Uniary and Binary
+	Unary - acts on single operand (negation sign)
+	Binary - acts on two operands (addition, division, etc)
+
+> - greater than
+< - less than
+>= - greater than or equal to
+<= - less than or equal to
+== - equal to
+~= - not equal to	
+
+Logical Operators
+&& - and
+|| - or
+~ - not
+true shows as a 1 in MATLAB
+false shows as a 0 in MATLAB

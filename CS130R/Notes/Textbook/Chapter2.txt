@@ -1,0 +1,177 @@
+Vectors and Matrices
+
+Rows x Columns
+Row Vectors (1 x N)
+rowVector = [1 2 3 4];
+
+Column Vectors (N x 1);
+colVector = [1; 2; 3; 4];
+Semicolons inbetween the square brackets means a new column
+
+Indexing
+Starts at 1 (not 0)
+newvec = [1 3 5 7 9 3 6 9 12 15];
+newvec(5) refers to the 5th element -- 9
+newvec(4:6) refers to the 4th through 6th elements -- 7 9 3
+newvec([1 10 5]) creates a new vector with the first, tenth, and fifth elements -- [1 15 9]
+newvec(11) = 18 adds an 11th element to the vector with the value of 18.
+newvec(13) = 24 adds a 12th and 13th element to the vector and sets the 13th to be 24 and the 12th is 0 by default -- [1 3 5 7 9 3 6 9 12 15 18 0 24]
+
+Creating Matrices
+mat = [4 3 2 1; 1 2 3 4] --> there must always be the same number of values in each row
+mat = [4 3 2 1; 1 2 3] is not allowed and will throw and error
+mat = [m:n; x:y] creates a 2 row matrix between m and n on the first row, and x and y for the second (y - x must equal n - m)
+Separate rows in a matrix can also be specified by hitting the Enter key after each row instead of typing a semicolon
+	mat = [4 3 2 1
+	1 2 3 4];
+
+Referring to and Modifying Matrix Elements
+mat(2, 3) refers the the element in the second row, third column
+mat(1:2, 2:3) refers to the first and second rows, second and third columns
+mat(1,:) refers to the entire first row
+mat(:,2) refers to the entire second column
+
+If a single index is used with a matrix, MATLAB unwinds the matrix column by column
+intmat = [100 77; 28 14]
+intmat = 
+	100 	77
+	 28 	14
+intmat(1) refers to 100
+intmat(2) refers to 28
+intmat(3) refers to 77
+intmat(4) refers to 14
+
+Other ways to create Vectors/Matrices
+vec = 9:-2:1 --> makes a vector with elements from 9 to 1 decreasing by 2 each time -- [9 7 5 3 1]
+mat = [1:2:10; 11:2:20] --> makes a matrix with row one = [1 3 5 7 9] and row two = [11 13 15 17 19]
+
+end Expression
+Can be used to refer to the last element in a vector -- vec(end) = vec(length(vec))
+For matrices, it can refer to the last row or column -- mat(2, end) second element in the final column
+
+Empty Vectors 
+An empty vector can be created using empty square brackets
+evec = [];
+Empty vectors can be used to delete elements as well
+vec = 4:8
+vec(3) = [] --> deletes the element at the third index
+Empty vectors can also be used to delete matrix elements
+mat = [7 8 9; 4 5 6]
+mat(2, 3) = [] --> can't do, would cause uneven rows
+mat(:,2) = [] --> deletes whole second column
+
+Three Dimensional Matrices
+To create a three dimensional array, you have to create the m x n matrices you want to be a part of the 3D matrix first: 
+layerone = reshape(1:15, 3, 5); --> creates a 3 x 5 matrix
+layertwo = fliplr(flipud(layerone));
+Then, you add the layers onto each other one-by-one:
+mat(:,:,1) = layerone;
+mat(:,:,2) = layertwo;
+Now mat is a 3 x 5 x 2 matrix
+rand, randi, zeros, and ones can all be used to make 3D arrays, if 3 dimensions are specified
+
+Vectors and Matrices as Function Arguments
+Just know that vectors and matrices can be passed as arguments into select functions, some listed below.
+vec = 1:5
+vec = cumsum(vec) --> [1 3 6 10 15]
+vec = cumprod(vec) --> [1 2 6 24 120]
+If a matrix is passed into these functions (min, max, sum, prod, cumsum, cumprod) it calls each function on each column
+mat = randi([1 20], 3, 5) -->	[3 16 1 14 8;
+				 9 20 17 16 14;
+				 19 14 19 15 4]
+max(mat) --> [19 20 19 16 14]
+sum(mat) --> [31 50 37 45 26]
+As columns are the default, they are considered to be the first dimension.  Specifying the second dimension as an argument to one of these functions will
+	result in the function operating rowwise 
+max(mat, [], 2) --> second argument must be empty vector for min and max when you want rowwise functionality
+sum(mat, 2)
+
+Scalar and Array Operations on Vectors and Matrices
+We can simply multiply a vector by 3
+v = [1 2 3]
+v = v * 3 --> [3 6 9]
+Or divide
+v/2 = [0.5000 1.0000 1.5000]
+To multiply every element in a matrix by 2:
+mat = [4:6; 3:-1:1];
+mat = mat * 2 --> [8 10 12; 6 4 2]
+In order to add or subtract two matrices/vectors together, they must be the exact same size
+To do array multiplication (element-wise multiplication of a vector or matrix) use the dot notation with the operator:
+mat1 = [1 2; 3 4]
+mat2 = [5 6; 7 8]
+mat1 .* mat2 = [5 12; 21 32]
+Same with division (./) and element-wise exponentiation (.^)
+
+Matrix Mutliplication
+MxN * NxP = MxP
+Use the regular * operator
+RowVector * ColVector = scalar
+(1 x n)	    (m x 1)
+ColVector * RowVector = Matrix
+(m x 1)     (1 x n)     (m x n)
+
+Logical Vectors
+Holds true (1) or false (0)
+vec = [5 9 3 4 6 11];
+isg = vec > 5 --> [0 1 0 0 1 1]
+vec = vec(isg) --> [9 6 11]
+
+Logical Operators Arrays
+| -- OR
+& -- AND
+both are element wise
+
+Transpose
+mat = [1 2; 3 4]
+transposeMat = mat'
+the ' transposes a matrix (can also use the transpose() function)
+
+Diff()
+diff([4 7 15 32] --> [3 8 17] (always does right - left
+diff([4 7 2 32] --> [3 -5 30]
+
+Meshgrid()
+[x y] = meshgrid(1:3, 1:2)
+x =	[1 2 3]
+	[1 2 3]
+
+y = 	[1 1 1]
+	[2 2 2]
+Functions
+linspace(x, y, n) --> creates a linearly spaced row vector between x and y with n entries
+logspace(x, y, n) --> creates a logarithmically spaced vector with n values from 10^x to 10^y, inclusive
+rand(n) --> creates an n x n matrix of random numbers between [0, 1)
+rand(x, y) --> creates an X x Y matrix with random numbers between [0, 1)
+randi([x, y], n) --> creates an n x n matrix with random ints between x and y inclusive
+randi([x, y], n, m) --> creates an m x n matrix with random ints between x and y inclusive
+zeros(n) --> creates n x n matrix full of zeros
+zeros(m, n) --> creates m x n matrix full of zeros
+ones(n) --> creates n x n matrix full of ones
+ones(m, n) --> creates m x n matrix full of ones
+length(vector) --> returns the number of elements in the vector
+size(vector/matrix) --> returns the m x n size of the vector or matrix
+length(matrix) --> returns either the number of columns or rows, whichever is largest
+numel(vector/matrix) --> returns the number of elements in the vector or matrix
+fliplr(mat) --> flips the matrix from left to right
+flipud(mat) --> flips the matrix from up to down
+rot90(mat) --> rotates the elements in the matrix by 90 degrees counterclockwise
+reshape(mat, m, n) --> reshapes a matrix into an m x n matrix (must have same number of elements as before -- cant go from 2 x 3 to 4 x 5
+repmat(mat, x, y) --> repeats a matrix X x Y times (see page 47 for visual)
+sin(vec) --> takes each individual element and sins it in vector or matrix (probably same with cos, and tan)
+sign(vec) --> returns -1 if negative, 0 if 0, and 1 if positive for each element in a vector or matrix
+min(vec) --> returns the minimum element of the vector or matrix
+max(vec) --> returns the maximum element of the vector or matrix 
+sum(vec) --> returns the sum of all the elements
+prod(vec) --> returns the product of all the elements
+cumsum(vec) --> returns a vector with the cumulative sum of each element
+cumprod(vec) --> returns a vector with the cumulative product of each element
+dot(vec, vec) --> returns the dot product of the two vectors
+cross(vec, vec) --> returns the cross product of the two vectors
+false(n) --> creates an n x n logical matrix full of falses (0)
+true(m, n) --> creates an m x n logical matrix full of trues (1)
+any(vec/matrix) --> returns true (1) if any of the elements in the logical vector/matrix are true
+all(vec/matrix) --> returns true (1) if all of the elements in the logical matrix/vector are true
+find(boolean expression) --> returns all the indices of a vector or matrix where the expression returns true
+isequal(vec1, vec2) --> returns true (1) if the vectors are equivalent elementy-by-element, false otherwise
+diff(vec/matrix) --> creates a vector with the difference between adjacent elements, with matrices, it finds the differences between adjacent elements column-wise (see page 64)
+meshgrid() --> creates matrices that separately specify coordinates 

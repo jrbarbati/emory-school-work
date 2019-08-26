@@ -1,0 +1,64 @@
+Selection Statements
+
+The if statement
+if condition
+	executable
+end
+
+The if-else statement
+if condition
+	executable
+else 
+	executable
+end
+
+Nested if statements
+if condition
+	if condition
+		executable
+	else 
+		executable
+	end
+else 
+	if condition
+		executable
+	else
+		executable
+	end
+end
+
+Adding elseif
+if condition
+	code
+elseif condition
+	code
+else 
+	code
+end
+
+Switch Statement
+switch switchExpression
+	case caseexp1
+		code
+	case caseexp2
+		code
+	case caseexp3
+		code
+	% etc: there can be many of these
+	otherwise
+		default code
+end
+
+The Menu Function
+	mypick = menu('Pick a pizza', 'Cheese', 'Pepperoni', 'Sausage');
+
+The "is" function
+boolean function
+isequal/isletter
+
+Functions
+menu() --> display a window with pushbuttons for options, the first string passed into is the heading and the rest are labels for the buttons
+isequal() --> takes two arguements, returns true if equal, false otherwise (compares arrays)
+isletter() --> takes one argument and returns true if that arguements is a letter, false otherwise
+iskeyword() --> takes a string and returns true if it is a MATLAB keyword, false otherwise
+

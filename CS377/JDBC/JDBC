@@ -1,0 +1,3 @@
+# To compile and run JDBC.java: ./JDBC
+javac JDBC.java
+java -cp .:/home/cs377000/lib/mysql-connector-java.jar JDBC

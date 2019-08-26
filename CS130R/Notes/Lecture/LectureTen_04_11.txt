@@ -1,0 +1,50 @@
+Recursive Functions
+	Function defined in terms of itself
+
+	function factorial( n )
+		if n == 0
+			answer = 1;
+		else
+			answer = n * factorial(n - 1);
+		end
+	end
+
+Sights and Sounds
+	Sound Processing
+		Computers measure the continuous sound waves at a constant interval -- stores the y value of the wave at the time of measurement
+	
+		Reading Audio Files
+			[y, Fs] = audioread(filename)
+				Fs -- frequency
+				if length of audio is 30s and Fs is 8000Hz (s^-1)
+				y would be 240000 numbers long (y is a vector)
+				y can also be a matrix (p x n)
+					p - sampled data
+					n - # of channels
+		Hearing Audio Files
+			sound(y, Fs)
+
+	Image Processing
+		Sensor is broken up into pixels, pixels return the number of photons that hit is while the shutter is open
+		
+		Reading Image Files
+			img = imread(filename) -- returns a 2D matrix if image is in greyscale
+			
+			RGB Images
+				Red, Green, Blue
+				Stored as 3D matrix, 3-2D matrices, one for each color
+				Numbers stored as uint8, uint16, or doubles
+				RGB values range from 0 to 255 (uint8)
+			Color Map
+				P x 3 matrix -- where P is the colors in the color map (all possible RGB values in the picture)
+			Indexed Matrix
+				Indexes row of color map
+				Same dimension as picture (pixels x pixels)
+				Each element in the matrix indexes the row in the color map the correlates to the color in the pixel
+
+		Writing Image Files
+			imwrite(img, filename)
+
+		Displaying Image Files
+			imshow(img) -- if img is type double, might have to scale it
+			image(img)

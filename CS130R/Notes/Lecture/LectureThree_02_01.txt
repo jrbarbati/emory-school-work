@@ -1,0 +1,56 @@
+High level vs Low level languages
+High level is more like english, can be compiled, like Java -- Source Code (high level) --> Compiler --> Object Code (low-level)
+MATLAB
+	Not compiled, but is a high-level language
+	it is interpreted, line-by-line
+	Functions
+		built in (size(), length())
+		can also be made, user created functions
+		accept an argument and return values (most of time)
+	Scripts
+		sequence of MATLAB code
+		e.g. format a plot
+	Programs
+		scripts that call functions
+
+Program
+FitByte 
+	conversion from steps to miles
+	ask user the number of steps they've walked in a day, and return the number of miles walked
+
+Algorithm
+	Sequence of steps to solve some problem
+
+Top-down Approach
+	break apart a problem into it's individual components
+	Convert Steps to Miles
+		Get # of steps from user
+		convert these steps to miles
+			steps to inches
+			inches to miles
+		report that to the user
+Scope -- Local Variables
+vars created in functions are only in scope in that function
+
+
+fprintf --> prints to the Command window
+
+"Congrats! You've walked __ miles"
+
+Placeholders
+%d -> for ints
+%f -> for floats
+%c -> for chars
+%s -> for strings
+
+%.3f --> prints the float with 3 decimal places
+%3d --> always outputs an int of length 3
+%-3d --> outputs an int of length three with any whitespaces following the int
+Good for printing tables or other things that you want to have well-aligned
+
+Special Characters
+\n --> new line
+\t --> tab
+'' --> single quote
+%% --> percent sign
+\\ --> \

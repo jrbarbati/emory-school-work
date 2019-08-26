@@ -1,0 +1,98 @@
+MATLAB Programming
+
+Scripts - Simple MATLAB programs
+
+Algorithms
+A sequence of steps required to solve a problem
+In a modular approach, the problem is broken down into simpler steps, top-down design
+Calculating the area of a circle
+	get the input - the radius
+	calculate the result - the area
+	display to output
+
+MATLAB Scripts
+High-level languages have english-like commands and functions such as "print this" or "if x < 5, do something"
+The computer can only interpret commands written in machine language, so high-level languages must be compiled or interpreted to machine language
+Matlab is interpreted, so an interpreter goes line-by-line interpreting and executing the program
+Comments are very important
+	they describe what scripts are supposed to do
+	
+
+Input/Output
+Use the input function to ask user for input
+If a char or String is desired, 's' has to be added to the function call
+fprintf 
+	%d - ints
+	%f - floats
+		%6.2f means a field width of 6 including decimal place and two decimal places
+	%s - strings
+ 	%c - single chars
+	Printing Vectors and Matrices
+		use %d in the output string for the number of numbers wanted in each line of output, end with \n
+		Example: fprintf('%d %d %d \n', vec) --> prints 3 values per line from the vector, same with matrices, but remember it unwraps matrices by the column
+
+Plotting
+Customizing a Plot: Color, Line Types, Marker Types
+	Colors
+		b - blue
+		c - cyan
+		g - green 
+		k - black
+		m - magenta
+		r - red
+		w - white
+		y - yellow
+	Plot Symbols/Markers
+		o - cirlce 
+		d - diamond
+		h - hexagram
+		p - pentagram
+		+ - plus
+		. - point
+		s - square
+		* - star
+		v - down triangle
+		< - left triangle
+		> - right triangle
+		^ - up triangle
+		x - x-mark
+	Line Types
+		-- - dashed
+		-. - dash dot
+		:  - dotted
+		-  - solid
+Load and Save
+Writing to a file meas writing to a file from the beginning, appending to a file is also writing, but starting at the end of the file rather than the beginning
+Save Command
+save filename matrixvariablename -ascii
+Appending 
+save filename matrixvariablename -ascii -append
+Reading From a File
+load filename --> only works if there are the same number of values in each line so that the data can be stored in a matrix
+
+User-Defined Functions
+function header
+	the keyword function
+	the name of the output argument followed by the assingment operator as the function returns a result
+	the name of the function (same as m-file)
+	the input arguement(s) in parentheses 
+A comment that describes what the function does
+The body of the function, which includes all statements and eventually must put a value in the ouput arguement (comments throughout)
+end at the end of the function
+
+
+Functions
+input('String') --> asks user for input from command window using the prompt String
+disp() --> displays result of expression between parentheses
+fprintf() --> prints the expression to the string, allows for formatting
+plot() --> plots data from matrices/vectors/variables
+xlabel('label') --> lables x axis with given string
+ylabel('label') --> lables y axis with given label
+title('title') --> titles plot with given title
+axis([xmin xmax ymin ymax]) --> sets plot with the given minimum and maximum values for each axis
+clf() --> clears figure window by removing everything from it
+figure() --> creates a new, empty figure window when called without any arguments
+figure(n) --> where n is an int is a way of creating and maintaining multiple figure windows and of referring to each individually
+hold() --> is a toggle that freezes the current graph in the figure window so that new plots will be superimposed on the current one (calling hold() again turns this off)
+legend() --> displays strings passed into it in a legend box in the figure window in order of the plots
+grid() --> displays grid lines on a graph, is a toggle similar to hold

@@ -1,0 +1,13 @@
+add/Inception/ss
+add/Taken 3/ss
+add/Deadpool/ss
+add/3/4
+add/2/2
+add/4/4
+find/0/z
+remove/Inception
+get/Inception
+find/0/z
+remove/3
+get/3
+find/0/z

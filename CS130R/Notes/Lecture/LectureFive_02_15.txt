@@ -1,0 +1,50 @@
+Loops
+For and While 
+for - counted loop
+while - conditional loop
+
+for index = range
+	action
+end
+
+index - loop variable
+range - vector (dictates how many times a loop runs)
+for loops automatically increment i based on vector of index
+i is usually sqrt(-1), but we are overriding it
+
+for i = [1:7]
+	disp('Some String \n');
+end
+
+Do something with data input
+Assume Vector of filepaths
+	['1.dat', '2.dat', ... ]
+function called myanalysis
+
+results = zeros(1, length(filepaths)); % creates results vector for storage of data
+for i = 1:length(filepaths)
+	data = load(filepath(i));
+	results(i) = myanalysis(data); % add the return data from myanalysis to the vector (results)
+end
+
+
+Nested for loops
+Let's say filepaths is a 2 x N matrix
+
+results = zeros(2, length(filepaths));
+for i = 1:length(filepaths)
+	data = load(filepaths(i));
+	for j = 1:2 
+		results(j, i) = myanalysis(data(j, :));
+	end
+end
+
+
+while condition
+	action
+end
+
+ui = input('Enter value between 0 and 9: ');
+while !(ui >= 0 && ui <= 9)
+	ui = input('Enter value between 0 and 9: ');
+end

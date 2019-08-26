@@ -1,0 +1,36 @@
+add/Inception/Some people fall asleep in a van
+add/ET/An ugly alien tries to find his way home
+add/Beauty and the Beast/A monster locks a girl in his castle until she loves him
+add/Bad News Bears/A bunch of ugly kids play baseball and curse
+add/The Shining/A man goes to a hotel and writes the worst novel ever
+add/Up/An old man moves to a more secluded neighborhood
+add/Titanic/A woman breaks her promise to 'never let go'
+add/Forrest Gump/A guy falls in love with the worst woman in the world
+add/Good Will Hunting/Robin Williams isn't funny in this one
+add/Transformers/SO MUCH CGI
+add/Zoolander/Unattractive guy thinks he is attractive
+add/Deadpool/Funniest 'Superhero' movie so far
+add/X-men/Wolverine
+add/The Hunger Games/Keifer Sutherland's dad is a bad guy
+add/One Million Ways to Die in the West/Liam Neeson still kills a bunch of people (maybe, haven't seen it)
+add/Taken 3/Liam Neeson proves he is a horrible father
+remove/Taken 3
+remove/Zoolander
+remove/Up
+remove/Whatever
+remove/Titanic
+remove/ET
+remove/Forrest Gump
+get/Titanic
+get/Transformers
+get/Taken 3
+get/Zoolander
+get/Up
+get/X-men
+get/Titanic
+get/ET
+get/Forrest Gump
+next/The Shining
+next/ET
+next/One Million Ways to Die in the West
+find/aa/zz

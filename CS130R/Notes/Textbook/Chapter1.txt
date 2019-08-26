@@ -1,0 +1,134 @@
+Introduction to MATLAB
+demo - brings up MATLAB examples in the Help Browser, examples of some of the features of MATLAB
+help - will explain any function; help help will explain how help works
+lookfor - searches through the help for specific word or phrase (this can take a long time)
+doc - will bring up a documentation page in Help Browser
+
+Variables/Assignment Statements
+
+variableName = expression
+	End the statement with a semicolon to supress the output.
+
+Var Names - 
+The name must begin with a letter of the alphabet. After that, the name can contain letters, digits, and the underscore character, but it cannot have a space.
+There is a limit to the length of the name; the built-in function namelengthmax tells what this maximum length is (63)
+Matlab is case-sensative.  Mynum, myNum and MYNUM are all different vars, but its bad convention to use all of them in one program
+Although underscores are valid in a name, their use can cause problems with some programs that interact with MATLAB (stick to camelCase)
+Keywords cannot be used as variable names
+Names of built-in functions can be used as variable names, though should not be used to avoid confusion
+
+Commands related to Vars -
+who - shows vars that have been defined in the Command Window (just names)
+whos - shows vars that have been defined but shows more information (type, etc)
+clear - clears all the vars so they no longer exist
+clear varName - clears that single variable (can be done with multiple vars, just put a space inbetween them
+
+Datatypes -
+single - floats, doesn't hold as many numbers as the double
+double - floats, holds more numbers than the single, default datatype
+int8-64 - integers, hold various amounts in integers
+uint8-64 - integers, holds various amounts of ints 0 - (whatever the case may be)
+char - single characters or strings
+logical (boolean) - true (1) or false (0)
+
+Continuation Operator
+... - add this to the end of a line to continue the expression on the next line
+
+Math Operators
++ - addition
+- - subtraction/negation
+* - multiplication
+/ - division (divided by: 10/5 = 2)
+\ - division (divided into: 5\10 = 2)
+^ - exponent
+
+Operator Precedence
+(High to Low)
+( ) - parentheses
+^ - exponentiation
+- - negation
+*, /, \ - multiplication and division
++, - - addition and subtraction
+>, <, <=, >=, ==, ~= - Relational
+&& - AND
+|| - OR
+= - assignment
+
+Help
+help can be used to identify matlab functions and also how to use them
+
+Constants
+pi - 3.14159...
+i - sqrt(-1)
+j - sqrt(-1)
+inf - infinity
+NaN - "not a number" (0/0 returns NaN)
+
+Character Encoding
+chars can be converted to numbers and back (ASCII)
+numbEquiv = double('a');
+
+Relational Operators
+> - greater than
+< - less than
+>= - greater than or equal to
+<= - less than or equal to
+== - equal to
+~= - not equal to
+
+Logical Operators
+|| - logical OR
+&& - logical AND
+~ - logical NOT
+xor() - exclusive or (returns true iff one and only one of the expressions is true)
+
+Functions
+intmin('intX')/intmin('uintX') - returns the minimum value that datatype can store
+intmax('intX')/intmin('uintX') - retruns maximum value that datatype can store
+class(varName) - returns the type that variable is holding
+format	long - returns the floating point with 15 decimal places
+	short - returns the floating point with 4 deciaml places
+	loose/compact - controls the spacing of the output
+abs(int) - returns the absolute value of that int
+fix
+floor(float) - always rounds a float down
+ceil(float) - always rounds a float up
+round(float) - rounds a float up if above .5 and down otherwise
+mod(int/double, int/double) - returns the remainder of the second argument divided into the first i.e. mod(5, 13) - 13 goes into 5 zero times with 5 leftover, returns 5
+	rem() does the same thing
+sign(int/float) - returns -1 if the value is negative, 0 if 0, and 1 if positive
+log(x) - returns the natural logarithm (base = e)
+log2(x) - returns the base 2 logarithm
+log10(x) - returns the base 10 logarithm
+	x = b^y --> y = logb(x)
+exp(n) - returns the e^n costant
+sin(x) - sin in radians
+sind(x) - sign in degrees
+asin(x) - arcsine in radians
+asind(x) - arcsine in degrees
+cos(x) - cosine in radians
+cosd(x) - cosine in degrees
+acos(x) - arcosine in radians
+acosd(x) - arcosine in degrees
+tan(x) - tangent in radians
+tand(x) - tangent in degrees
+atan(x) - arctangent in radians
+atand(x) - arctangent in degrees
+rand - returns a random number between 0 and 1 (non-inclusive)
+rand*N - returns a random real number between 0 and N (non-inclusive)
+rand*(high - low) + low - returns a real number between high and low (non-inclusive)
+randn - used to generate normally distributed random numbers
+randi(imax) - returns a random integer between 1 and imax (inclusive)
+randi([imin, imax]) - returns a random int between imin and imax (inclusive)
+rng(intseed/'shuffle'/'default') - sets the state of the random number generation
+intX(x) - converts char/double to the integer type specified
+double(x) - converts char/intX to a double
+char(x) - converts the number x into a char (if possible)
+xor(expression1, expression2) - Truth Table:
+				expression1	expression2	xor()
+				    T		    T		 F
+				    T		    F  		 T
+				    F		    T  		 T
+				    F		    F     	 F
+sqrt() - returns square root
+nthroot(x, n) - returns nthroot of x

@@ -1,0 +1,68 @@
+Advanced Functions
+
+Anonymous Functions
+fnhandlevar = @(arguments) function body;
+	@ -> returns function handle to whatever you specify after
+	Example:
+	fh = @(x) x + 2;
+		fh(4) -> returns 6
+noargs = @() 2^2;
+	calling --> noargs(), returns 4
+
+Function Functions
+Functions that take other functions as args
+
+Typical Function
+	function [ y ] = example( fnhandle )
+	y = fnhandle(2);
+	end
+Anonymous Function
+	f1 = @(x) x^2;
+Script
+	example( f1 ) --> returns 4
+
+Functions with Variable Number of Inputs and Outputs
+varargin - cell array that takes any number of inputs
+nargin - number of inputs in function call
+varargout - cell array that takes in any number of outputs
+nargout - number of outputs in the function call
+
+function [ product ] = matMult( A, varargin )
+% MATMULT multiplies the input matrices and returns the product
+if nargin == 1
+	product = A * A;
+elseif nargin == 2
+	product = A * varargin{1};
+else
+	disp('Too many args');
+end % ends if
+end % ends function
+
+OR
+
+function [ product ] = matmult( varargin )
+% MATMULT multiplies the input matrices and returns the product
+if nargin == 1
+	product = varargin{1} * varargin{1};
+elseif nargin == 2
+	product = varargin{1} * varargin{2};
+else
+	dips('Too many args');
+end % end if
+end % ends matmult()
+
+MULTIPLE OUTPUTS
+
+function [ varargout ] = matDims( A )
+if nargout == 1
+	varargout{1}(1) = size(A, 1);
+	varargout{1}(2) = size(A, 2);
+elseif nargout == 2
+	varargout{1} = size(A, 1);
+	varargout{2} = size(A, 2);
+else 
+	disp('Incorrect number of outputs');
+end % ends if
+end % ends matDims()
+
+Recursion

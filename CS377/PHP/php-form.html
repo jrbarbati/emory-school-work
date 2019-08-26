@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CS377 - PHP Project</title>
+		<!-- jQuery -->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Optional theme -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<style type="text/css">
+			* {
+				font-family: 'Courier New';
+			}
+			.jumbotron {
+				padding: 0;
+			}
+			.row {
+				text-align: center;
+			}
+			#col {
+				margin-left:  -40px;
+				margin-right: -40px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="jumbotron">
+			<div class="container">
+				<h1>CS377 - PHP Project</h1>
+				<h3>Joseph Barbati</h3>
+			</div> <!-- /.container -->
+		</div> <!-- /.jumbotron -->
+		<!-- Start Input Forms -->
+		<div class="container">
+			<p>Enter query fields:</p>
+			<br>
+			<br>
+			<form action="http://holland.mathcs.emory.edu/~jdbarba/query_result.php" method="post">
+				<div class="row">
+					<div class="col-md-4" id="col">
+						<label for="sname">Supplier Name:</label>
+						<input type="text" name="sname" />
+					</div> <!-- /.col -->
+					<div class="col-md-4" id="col">
+						<label for="pname">Part Name:</label>
+						<input type="text" name="pname" />
+					</div> <!-- /.col -->
+					<div class="col-md-4" id="col">
+						<label for="jname">Project Name:</label>
+						<input type="text" name="jname" />
+					</div> <!-- /.col -->
+				</div> <!-- /.row -->
+				<br>
+				<br>
+				<div class="row">
+					<div class="col-md-4" id="col">
+						<label for="scity">Supplier City:</label>
+						<input type="text" name="scity" />
+					</div> <!-- /.col -->
+					<div class="col-md-4" id="col">
+						<label for="pcity">Part City:</label>
+						<input type="text" name="pcity" />
+					</div> <!-- /.col -->
+					<div class="col-md-4" id="col">
+						<label for="jcity">Project City:</label>
+						<input type="text" name="jcity" />
+					</div> <!-- /.col -->
+				</div> <!-- /.row -->
+				<br>
+				<div class="row">
+					<div class="col-md-12" id="col">
+						<input type="submit" name="submit" class="btn btn-success" value="Submit Query" />
+					</div>
+				</div> <!-- /.row -->
+			</form>
+		</div> <!-- /.container -->
+	</body>
+</html>

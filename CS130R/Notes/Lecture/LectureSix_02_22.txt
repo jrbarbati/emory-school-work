@@ -1,0 +1,70 @@
+Modular Program
+Tic-Tac-Toe
+Algorithm
+	Prompt user for a move/make move
+	Add the move to the game board and display
+	Check for winner - if so, stop game and display winner
+	If no winner, and still moves to play, switch players
+	Repeat steps
+
+Step 1: Prompt user for move and make the move
+	function - getMove() - prompts user
+		no input args, use input function
+		output row, column indexes for where the user wants to go
+		
+	function [ r,c ] = getMove()
+	% GETMOVE - prompts the user for r,c of their move
+		action
+	end
+
+	function - makeMove() - generates the move
+		no input args, use random number generator to get the r and c
+		output row and column indexes for computer's move
+	
+	function [ r,c ] = makeMove() 
+	% MAKEMOVE - get r,c for computers move
+		action
+	end
+
+Step 2: Add move to gameboard and display
+	function - showMove(board, r, c, player) - adds move to board
+	subfunction - drawBoard(r, c) - displays the move to the board
+	
+	function [ newBoard ] = showMove(board, r, c, player)
+	% SHOWMOVE - add move to board and display
+		action
+		drawBoard(board);
+	end 
+	function drawBoard(board)
+	% DRAWBOARD - displays board
+		action
+	end
+
+Step 3: Check for winner
+	function - checkWinner(board) - checks for winner
+	function [ noWinner ] = checkWinner(board) 
+	% CHECKWINNER true of there is no winner, false if there is a winner
+		action
+	end
+
+Step 4: No winner & still moves to play --> repeat
+	This step takes place in the main script file
+	noWinner = true;
+	player = 1;
+	numMoves = 0;
+	board = nan(3); % 3x3 matrix of NaN's
+	while (noWinner && numMoves < 10)
+		if player == 1
+			[r, c] = getMove();
+		else 
+			[r, c] = makeMove();
+		end
+		board = showMove(board, r, c, player);
+		noWinner = checkWinner(board);
+		numMoves = numMoves + 1;
+		if player == 1
+			player == -1;
+		else 
+			player == 1;
+		end
+	end 

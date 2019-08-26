@@ -1,0 +1,53 @@
+Advanced File I/O
+
+load - matrix formatted data
+	all the same type
+	regular matrix (m x n)
+save - matrix formatted data
+
+Steps for File I/O
+1. Open File
+2. Read/Write/Append
+	Writing - starting from scratch
+	Appending - adding to existing text
+3. Close File
+
+Open/Close File
+fopen('filename', 'permission')
+	permissions - 'r', 'w', 'a'
+	returns file identifier (fid) if function worked, or -1 if failed
+fclose(fid)
+	returns close results --> 0 if successful, -1 if not
+
+Reading
+fscanf(fid, '%s %d %s', [3 inf]) --> returns a matrix of the data in the specified format
+	reads formatted data into a matrix
+	uses conversion format (%d, %f, %s)
+textscan(fid, '%s %d %s') --> returns a cell array of the data in the specified format
+	reads formatted data into a cell array
+	uses conversion format
+fgetl(fid)
+	reads one line at a time, except newline character
+fgets(fid)
+	reads one line at a time, including newline character
+feof(fid) --> returns logical true if you are at the end of the file
+
+Writing
+fprintf(fid, 'format', variables) --> prints formatted set of lines to a file
+
+Examples
+fid = fopen('example.dat', 'r');
+mat = fscanf(fid, '%s %d %s', [3 inf]);
+cr = fclose(fid);
+
+fid = fopen('example1.dat', 'r');
+ca = textscan(fid, '%s %d %s');
+cr = fclose(fid);
+
+fid = fopen('example2.dat', 'r');
+while ~feof(fid)
+	line = fgetl(fid);
+end
+cr = close(fid);
+
+
